@@ -20,7 +20,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            ColorView(color: UIColor(
+            ColorizedView(color: UIColor(
                         red: CGFloat(redSlider / 255),
                         green: CGFloat(greenSlider / 255),
                         blue: CGFloat(blueSlider / 255),
@@ -30,11 +30,10 @@ struct ContentView: View {
             VStack(spacing: 15.0) {
                 HStack {
                     ColorSlider(value: $redSlider,
-                                textColor: .black,
                                 background: .red,
                                 accentColor: .red)
-                        .onChange(of: redSlider) { value in
-                            redValue = "\(lround(value))"
+                        .onChange(of: redSlider) { TextFieldValue in
+                            redValue = "\(lround(TextFieldValue))"
                         }
                     
                     TextField("\(lround(redSlider))",
@@ -46,9 +45,9 @@ struct ContentView: View {
                                   dismissButton: .destructive(Text("Cancel"))
                                   )
                         }
-                        .onChange(of: redValue) { value in
-                            if (Double(value) == nil) {
-                                if value != "" {
+                        .onChange(of: redValue) { TextFieldValue in
+                            if (Double(TextFieldValue) == nil) {
+                                if TextFieldValue != "" {
                                     showAlert = true
                                     redValue = ""
                                 }
@@ -57,11 +56,10 @@ struct ContentView: View {
                 }
                 HStack {
                     ColorSlider(value: $greenSlider,
-                                textColor: .black,
                                 background: .green,
                                 accentColor: .green)
-                        .onChange(of: greenSlider) { value in
-                            greenValue = "\(lround(value))"
+                        .onChange(of: greenSlider) { TextFieldValue in
+                            greenValue = "\(lround(TextFieldValue))"
                         }
                     TextField("\(lround(greenSlider))",
                               text: $greenValue)
@@ -71,9 +69,9 @@ struct ContentView: View {
                                   message: Text("Only numbers"),dismissButton: .destructive(Text("Cancel"))
                             )
                         }
-                        .onChange(of: greenValue) { value in
-                            if (Double(value) == nil) {
-                                if value != "" {
+                        .onChange(of: greenValue) { TextFieldValue in
+                            if (Double(TextFieldValue) == nil) {
+                                if TextFieldValue != "" {
                                     showAlert = true
                                     greenValue = ""
                                 }
@@ -82,11 +80,10 @@ struct ContentView: View {
                 }
                 HStack {
                     ColorSlider(value: $blueSlider,
-                                textColor: .black,
                                 background: .blue,
                                 accentColor: .blue)
-                        .onChange(of: blueSlider) { value in
-                            blueValue = "\(lround(value))"
+                        .onChange(of: blueSlider) { TextFieldValue in
+                            blueValue = "\(lround(TextFieldValue))"
                         }
                     
                     TextField("\(lround(blueSlider))",
@@ -98,9 +95,9 @@ struct ContentView: View {
                                   dismissButton: .destructive(Text("Cancel"))
                             )
                         }
-                        .onChange(of: blueValue) { value in
-                            if (Double(value) == nil) {
-                                if value != "" {
+                        .onChange(of: blueValue) { TextFieldValue in
+                            if (Double(TextFieldValue) == nil) {
+                                if TextFieldValue != "" {
                                     showAlert = true
                                    blueValue = ""
                                 }
@@ -108,7 +105,9 @@ struct ContentView: View {
                         }
                 }
             }
-            .padding()
+            .padding(.trailing)
+            .frame(width: 350)
+            
             
             Spacer()
         }
@@ -121,7 +120,6 @@ struct ColorSlider: View {
     
     @Binding var value: Double
     
-    let textColor: Color
     let background: Color
     var accentColor: Color
     
@@ -144,7 +142,7 @@ struct ColorSlider: View {
     }
 }
 
-struct BorderedVieweModifier: ViewModifier {
+struct BorderedViewModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding(.leading)
@@ -160,7 +158,7 @@ struct BorderedVieweModifier: ViewModifier {
 
 extension View {
     func bordered() -> some View {
-        ModifiedContent(content: self, modifier: BorderedVieweModifier())
+        ModifiedContent(content: self, modifier: BorderedViewModifier())
     }
 }
 
