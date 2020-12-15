@@ -11,6 +11,7 @@
 		ABEB5F9A2588CF55000F8BAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEB5F992588CF55000F8BAD /* ContentView.swift */; };
 		ABEB5F9C2588CF58000F8BAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABEB5F9B2588CF58000F8BAD /* Assets.xcassets */; };
 		ABEB5F9F2588CF58000F8BAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABEB5F9E2588CF58000F8BAD /* Preview Assets.xcassets */; };
+		ABEB5FA82588CFA9000F8BAD /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEB5FA72588CFA9000F8BAD /* ColorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		ABEB5F9B2588CF58000F8BAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABEB5F9E2588CF58000F8BAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ABEB5FA02588CF58000F8BAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABEB5FA72588CFA9000F8BAD /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				ABEB5F972588CF55000F8BAD /* changeableView_SwiftUIApp.swift */,
 				ABEB5F992588CF55000F8BAD /* ContentView.swift */,
+				ABEB5FA72588CFA9000F8BAD /* ColorView.swift */,
 				ABEB5F9B2588CF58000F8BAD /* Assets.xcassets */,
 				ABEB5FA02588CF58000F8BAD /* Info.plist */,
 				ABEB5F9D2588CF58000F8BAD /* Preview Content */,
@@ -140,6 +143,7 @@
 			files = (
 				ABEB5F9A2588CF55000F8BAD /* ContentView.swift in Sources */,
 				ABEB5F982588CF55000F8BAD /* changeableView_SwiftUIApp.swift in Sources */,
+				ABEB5FA82588CFA9000F8BAD /* ColorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
